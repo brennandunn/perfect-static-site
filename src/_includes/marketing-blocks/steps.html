@@ -1,0 +1,16 @@
+<div class="relative max-w-6xl mx-auto">
+  {% for step in page.steps %}
+
+    <div class="my-32 w-full flex {% cycle 'row': 'flex-row', 'flex-row-reverse' %} items-center">
+      <div class="w-1/2">
+        <div class="text-xs font-bold text-white uppercase bg-indigo-700 inline-block px-2 py-1 rounded">Step {{ forloop.index }}</div>
+        <div class="mt-2 text-3xl leading-tight">{{ step.headline }}</div>
+        <div class="mt-4 text-lg text-gray-700">{{ step.description }}</div>
+      </div>
+      <div class="{% cycle 'padding': 'pl-8', 'pr-8' %} w-1/2">
+        <img class="rounded-lg shadow" src="https://placebear.com/500/500" />
+      </div>
+    </div>
+
+  {% endfor %}
+</div>

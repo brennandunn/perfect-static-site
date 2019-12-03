@@ -1,0 +1,24 @@
+<div class="bg-gray-900 p-16">
+  {% if include.headline %}
+    <div class="mb-12 text-2xl text-white text-center">{{ include.headline }}</div>
+  {% endif %}
+  <div class="-mx-4 flex flex-wrap justify-between">
+  {% for use in site.uses %}
+
+    <div class="w-1/3 mb-8 px-4 flex items-stretch">
+      <div class="w-full flex flex-col justify-between bg-gray-800 p-8 text-white shadow rounded">
+        <div>
+          <div class="text-lg font-bold text-gray-100">{{ use.short_name }}</div>
+          <div class="text-sm text-gray-200">{{ use.short_description }}</div>
+        </div>
+        <div class="mt-4 text-sm">
+          <a href="{% link {{ use.path }} %}">
+            Learn more
+          </a>
+        </div>
+      </div>
+    </div>
+
+  {% endfor %}
+  </div>
+</div>

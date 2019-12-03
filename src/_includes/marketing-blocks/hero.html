@@ -1,0 +1,12 @@
+<div class="relative max-w-6xl mx-auto">
+  <div class="flex mt-16 mb-40">
+    <div class="w-full {% if page.hero.centered %}lg:w-4/5 mx-auto flex flex-col items-center text-center{% else %}lg:w-3/5{% endif %}">
+      <h1 class="text-5xl font-bold leading-tight">
+        {{ page.hero.title }}
+      </h1>
+      <div class="mt-4 text-xl text-gray-700 {% if page.hero.centered %}lg:w-4/5{% endif %}">
+        {{ page.hero.description | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>

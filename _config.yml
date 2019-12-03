@@ -5,4 +5,67 @@ source: src
 destination: public
 keep_files:
   - css
-permalink: /:slug/
+permalink: pretty
+
+collections:
+  competitors:
+    output: true
+    permalink: /compare-to/:name/
+  uses:
+    output: true
+    permalink: /use-case/:name/
+  industries:
+    output: true
+    permalink: /industries/:name/
+  integrations:
+    output: true
+    permalink: /works-with/:name/
+  recipes:
+    output: true
+    permalink: /recipes/:name/
+  widgets:
+    output: true
+    permalink: /widgets/:name/
+
+defaults:
+  -
+    scope:
+      path: "/img"
+    values:
+      image: true
+  -
+    scope:
+      path: ""
+      type: "competitors"
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "uses"
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "industries"
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "integrations"
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "recipes"
+    values:
+      layout: default
+  -
+    scope:
+      path: ""
+      type: "widgets"
+    values:
+      layout: default

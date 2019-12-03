@@ -1,0 +1,59 @@
+<div class="bg-gray-900">
+  <div class="relative max-w-6xl mx-auto pt-8 pb-16">
+    <div class="flex justify-between text-white">
+
+      <div>
+        <div class="uppercase">Product</div>
+        <ul>
+          {% for use in site.uses %}
+          <li>
+            <a href="{% link {{ use.path }} %}">{{ use.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        <div>-</div>
+        <ul>
+          {% for use in site.widgets %}
+          <li>
+            <a href="{% link {{ use.path }} %}">{{ use.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <div class="uppercase">Integrations</div>
+        <ul>
+          {% for use in site.integrations %}
+          <li>
+            <a href="{% link {{ use.path }} %}">{{ use.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <div class="uppercase">Who It's For</div>
+        <ul>
+          {% for use in site.industries %}
+          <li>
+            <a href="{% link {{ use.path }} %}">{{ use.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <div class="uppercase">Compare To</div>
+        <ul>
+          {% for use in site.competitors %}
+          <li>
+            <a href="{% link {{ use.path }} %}">{{ use.name }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>

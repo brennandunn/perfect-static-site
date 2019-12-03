@@ -1,0 +1,26 @@
+<div class="bg-gray-300 py-24">
+  <div class="relative max-w-6xl mx-auto">
+    <div class="flex {% if include.content.direction == 'left' %}flex-row-reverse{% elsif include.content.direction == 'center' %}flex-col justify-center text-center{% else %}flex-row{% endif %} items-center">
+      <div class="{% unless include.content.direction == 'center' %}w-1/2{% else %}w-3/5{% endunless %} {% if include.content.direction == 'left' %}pl-12{% elsif include.content.direction == 'center' %}{% else %}pr-12{% endif %}">
+        <div class="{% if include.content.direction == 'center' %}text-3xl{% else %}text-2xl{% endif %} leading-tight">{{ include.content.headline | markdownify }}</div>
+        <div class="{% if include.content.direction == 'center' %}w-full mx-auto text-lg mt-8{% else %}mt-4{% endif %} text-gray-800 markdown">
+          {{ include.content.content | markdownify }}
+        </div>
+      </div>
+
+      <div class="w-1/2 {% if include.content.direction == 'center' %}mt-12{% endif %}">
+        <div class="flex items-center rounded-lg bg-white shadow-xl overflow-hidden p-8">
+          <div class="mr-4 w-48">
+            <img class="rounded-full w-full" src="https://placebear.com/150/150" />
+          </div>
+          <div>
+            <div class="markdown">{{ "&rdquo;" | append: include.content.testimonial.content | append: "&rdquo;" | markdownify }}</div>
+            <div class="mt-2 uppercase font-bold text-xs">
+              – {{ include.content.testimonial.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

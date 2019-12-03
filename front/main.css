@@ -9,6 +9,11 @@ h2 {
 h3 {
     @apply text-lg;
 }
+
+h1, h2, h3 {
+  @apply font-headline;
+}
+
 a {
     @apply text-blue-600 underline;
 }
@@ -28,3 +33,7 @@ a {
 @tailwind components;
 
 @tailwind utilities;
+
+.markdown p {
+  @apply mb-3;
+}
